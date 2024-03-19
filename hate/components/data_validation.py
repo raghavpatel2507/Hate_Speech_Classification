@@ -3,7 +3,7 @@ import shutil
 from hate.logger import logging
 from hate.exception import CustomException
 from hate.entity.config_entity import DataValidationConfig
-from hate.entity.artifact_entity import (DataIngestionArtifact,
+from hate.entity.artifact_entity import (DataIngestionArtifacts,
                                                  DataValidationArtifact)
 
 
@@ -13,7 +13,7 @@ from hate.entity.artifact_entity import (DataIngestionArtifact,
 class DataValidation:
     def __init__(
         self,
-        data_ingestion_artifact: DataIngestionArtifact,
+        data_ingestion_artifact: DataIngestionArtifacts,
         data_validation_config: DataValidationConfig,
     ):
         try:
