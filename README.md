@@ -19,3 +19,17 @@ conda activate hate
 ```bash
 pip install -r requirments.txt
 ```
+
+# project workflow
+
+- constants
+
+- config_entity
+
+- artifact_entity
+
+- components
+
+- pipelines
+
+- app.py
