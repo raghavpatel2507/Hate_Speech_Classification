@@ -11,6 +11,7 @@ class DataIngestionConfig:
         self.DATA_ARTIFACTS_DIR: str = os.path.join(self.DATA_INGESTION_ARTIFACTS_DIR,DATA_INGESTION_IMBALANCE_DATA_DIR)
         self.NEW_DATA_ARTIFACTS_DIR: str = os.path.join(self.DATA_INGESTION_ARTIFACTS_DIR,DATA_INGESTION_RAW_DATA_DIR)
         self.ZIP_FILE_DIR = os.path.join(self.DATA_INGESTION_ARTIFACTS_DIR)
+
         
 @dataclass
 class DataTransformationConfig:
@@ -44,3 +45,11 @@ class ModelTrainerConfig:
         self.EPOCH = EPOCH
         self.BATCH_SIZE = BATCH_SIZE
         self.VALIDATION_SPLIT = VALIDATION_SPLIT
+
+
+
+
+
+
+
+

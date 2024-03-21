@@ -7,11 +7,13 @@ from hate.components.model_trainer import ModelTrainer
 
 
 from hate.entity.config_entity import (DataIngestionConfig,
+                                       
                                        DataTransformationConfig,
                                        ModelTrainerConfig
                                        )
 
 from hate.entity.artifact_entity import (DataIngestionArtifacts,
+                                         
                                          DataTransformationArtifacts,
                                          ModelTrainerArtifacts)
 
@@ -21,6 +23,7 @@ class TrainPipeline:
         self.data_ingestion_config = DataIngestionConfig()
         self.data_transformation_config = DataTransformationConfig()
         self.model_trainer_config = ModelTrainerConfig()
+        
   
 
 
@@ -41,6 +44,7 @@ class TrainPipeline:
             raise CustomException(e, sys) from e
         
     
+      
 
     def start_data_transformation(self, data_ingestion_artifacts = DataIngestionArtifacts) -> DataTransformationArtifacts:
         logging.info("Entered the start_data_transformation method of TrainPipeline class")
@@ -82,14 +86,17 @@ class TrainPipeline:
         logging.info("Entered the run_pipeline method of TrainPipeline class")
         try:
             data_ingestion_artifacts = self.start_data_ingestion()
-
-            data_transformation_artifacts = self.start_data_transformation(
-                data_ingestion_artifacts=data_ingestion_artifacts
+            data_validation_artifact = self.start_data_validation(
+                data_ingestion_artifact=data_ingestion_artifacts
             )
 
-            model_trainer_artifacts = self.start_model_trainer(
-                data_transformation_artifacts=data_transformation_artifacts
-            )
+            # data_transformation_artifacts = self.start_data_transformation(
+            #     data_ingestion_artifacts=data_ingestion_artifacts
+            # )
+
+            # model_trainer_artifacts = self.start_model_trainer(
+            #     data_transformation_artifacts=data_transformation_artifacts
+            # )
 
             
 

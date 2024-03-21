@@ -26,6 +26,8 @@ INPLACE = True
 DROP_COLUMNS = ['Unnamed: 0','count','hate_speech','offensive_language','neither']
 CLASS = 'class'
 
+
+
 # Model training constants
 MODEL_TRAINER_ARTIFACTS_DIR = 'ModelTrainerArtifacts'
 TRAINED_MODEL_DIR = 'trained_model'
@@ -48,3 +50,7 @@ LOSS = 'binary_crossentropy'
 METRICS = ['accuracy']
 ACTIVATION = 'sigmoid'
 
+
+MODEL_NAME = 'model.h5'
+APP_HOST = "0.0.0.0"
+APP_PORT = 5000
