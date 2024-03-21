@@ -86,7 +86,7 @@ class DataTransformation:
             words = str(words).lower()
             words = re.sub('\[.*?\]', '', words)
             words = re.sub('https?://\S+|www\.\S+', '', words)
-            words = re.sub('<.*?>+', '', words)
+            words = re.sub('<.*?ð>+', '', words)
             words = re.sub('[%s]' % re.escape(string.punctuation), '', words)
             words = re.sub('\n', '', words)
             words = re.sub('\w*\d\w*', '', words)
